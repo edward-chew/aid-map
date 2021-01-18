@@ -38,8 +38,6 @@ export class MapContainer extends Component {
   fetchNearbyPlaces(){
     // const proxy_url = 'https://cors-anywhere.herokuapp.com/';
     // const proxy_url = "http://cors.now.sh/"
-    // const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + my_lat + "," + my_lng + "&radius=" + rad + "&type=" + type + "&key=AIzaSyDEcXJ1ZkrovEMMbFNfPTyIe2TjuwMGYic";
-    // const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDEcXJ1ZkrovEMMbFNfPTyIe2TjuwMGYic"
 
     var places = [] // List of places    
     console.log(this.state.apidata);
@@ -75,7 +73,7 @@ export class MapContainer extends Component {
     });
     const rad = 1000;
     const type = "hospital";
-    const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + my_lat + "," + my_lng + "&radius=" + rad + "&type=" + type + "&key=AIzaSyDEcXJ1ZkrovEMMbFNfPTyIe2TjuwMGYic";
+    const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + my_lat + "," + my_lng + "&radius=" + rad + "&type=" + type + "&key=";
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -134,5 +132,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDEcXJ1ZkrovEMMbFNfPTyIe2TjuwMGYic'
+  apiKey: ''
 })(MapContainer);
